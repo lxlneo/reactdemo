@@ -14,12 +14,14 @@ class App extends Component {
             navs:['itemA','itemB','itemC','itemD','itemE']
         }
     }
-
+    onClickHandle(entry){
+        console.log('onClickHandle',entry);
+    }
     render() {
         return (
             <div className="App">
                 <Header info={this.state.headerInfo} />
-                <Nav nav={this.state.navs} />
+                <Nav navs={this.state.navs}  onClickHandler={this.onClickHandle} />
                 <Body info={this.state.bodyInfo}/>
             </div>
         );
