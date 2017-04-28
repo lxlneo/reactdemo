@@ -1,10 +1,11 @@
 import React ,{Component} from 'react';
+import PropTypes from 'prop-types';
 import '../css/body.css';
-export default class Body extends Component{
+ class Body extends Component{
     constructor(props){
         super(props)
         this.state = {
-            inputValue:'input',
+            inputValue:'',
             radioButton:'',
             select:'D',
             textarea:'this is textarea',
@@ -12,16 +13,17 @@ export default class Body extends Component{
         }
        this.handleChange = this.handleChange.bind(this); //绑定 this
        this.handleSubmit = this.handleSubmit.bind(this);
+
     }
     componentWillMount = () => {
         this.selectedCheckboxes = {};
     }
-    
+
     handleChange(event){
         let target = event.target;
         let name = event.target.name;
         let value = target.value;
-        if(target.type == 'checkbox'){  // 处理checkbox的选中
+        if(target.type === 'checkbox'){  // 处理checkbox的选中
            if(this.selectedCheckboxes[value]){
                target.checked = false;
                delete this.selectedCheckboxes[value];
@@ -69,3 +71,11 @@ export default class Body extends Component{
     )
     }
 }
+ // After (15.5)  通过数据校验，校验 props的类型是否正确，还可以通过其它的方式校验，重react官方独立propTypes来看，支持独立其它方式
+// 比如使用   Flow or TypeScript 
+Body.propTypes = {
+    times:PropTypes.number
+}
+
+
+export default Body;

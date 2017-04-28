@@ -10,7 +10,8 @@ class App extends Component {
         this.state = {
             headerInfo:"this is a message for header from App",
             bodyInfo:"this is a message for body from App",
-            navs:['itemA','itemB','itemC','itemD','itemE']
+            navs:['itemA','itemB','itemC','itemD','itemE'],
+            times:234
         }
     }
     onClickHandle(entry){
@@ -20,7 +21,7 @@ class App extends Component {
         return (
             <div className="App">
                 <Header info={this.state.headerInfo} />
-                <Body info={this.state.bodyInfo}/>
+                <Body info={this.state.bodyInfo}  times={this.state.times}  />
             </div>
         );
     }
