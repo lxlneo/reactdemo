@@ -9,7 +9,7 @@ export default class Body extends Component{
         console.log('componentWillMount')
     }
     componentDidMount(){
-        console.log('componentDidMount')
+        console.log('componentDidMount') // ajax 更新数据在这个方法里面执行
     }
     componentWillReceiveProps(nextProps){
         console.log('componentWillReceiveProps')
