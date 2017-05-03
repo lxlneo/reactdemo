@@ -3,14 +3,13 @@ import './App.css';
 
 import Header from './components/header';
 import Body from './components/body';
-import Nav from './components/nav';
 
 class App extends Component {
    constructor(props){
         super(props);
         this.state = {
             headerInfo:"this is a message for header from App",
-            bodyInfo:"this is a message for body from App",
+            bodyInfo:"bodyInfo",
             navs:['itemA','itemB','itemC','itemD','itemE']
         }
     }
@@ -19,11 +18,18 @@ class App extends Component {
         var navs = this.state.navs;
         this.setState({navs:navs.push('item'+new Math.random())})
     }
+    shouldUpdateBodyInfo(){
+        this.setState({bodyInfo:"new bodyInfo"})
+    }
+    shouldNotUpdateBodyInfo(){
+        this.setState({bodyInfo:"bodyInfo"})
+    }
     render() {
         return (
             <div className="App">
                 <Header info={this.state.headerInfo} />
-                <Nav navs={this.state.navs}  onClickHandler={this.onClickHandle} />
+                <button onClick={this.shouldUpdateBodyInfo.bind(this)}>update body info</button>
+                <button onClick={this.shouldNotUpdateBodyInfo.bind(this)}>do not update body info</button>
                 <Body info={this.state.bodyInfo}/>
             </div>
         );

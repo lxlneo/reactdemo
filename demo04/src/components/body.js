@@ -16,6 +16,8 @@ export default class Body extends Component{
     }
     shouldComponentUpdate(nextProps,nextState){
         console.log('shouldComponentUpdate')
+        console.log(nextProps,this.props);
+        return nextProps.info != this.props.info   //比较属性 看是否需要修改 当需要修改的时候返回true 属性发生改变返回true
     }
     componentWillUpdate(nextProps,nextState){
         console.log('componentWillUpdate')
@@ -29,9 +31,12 @@ export default class Body extends Component{
     
     render(){
         return(
+            <div>
             <p className="App-intro">
                 {this.props.info}
-        </p>
-    )
+            </p>
+               <img src="https://raw.githubusercontent.com/kdchang/reactjs101/master/Ch04/images/react-lifecycle.png"/> 
+            </div>
+          )
     }
 }
