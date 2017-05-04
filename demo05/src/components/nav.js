@@ -1,20 +1,18 @@
 import React, {Component} from 'react';
+import {Link,IndexLink} from 'react-router';
 
 export default class Nav extends Component {
     constructor(props) {
         super(props);
     }
-    clickHandler(e,entry){
-        console.log("clickHandler",entry)
-        this.props.onClickHandler(entry)
-    }
     render() {
         return (
             <ul>
-                {this.props.navs.map((entry,index)=> {  //navs通过 props 父组件传递过来
-                        return <li key={entry} onClick={this.clickHandler.bind(this,entry)} >{entry}</li>
-                    }
-                )}
+                <li> <IndexLink to="/">home</IndexLink></li>
+                <li> <link to="/acount">account</link></li>
+                <li> <link to="/bills">bills</link></li>
+                <li> <link to="/orders">orders</link></li>
+                <li> <link to="/product">product</link></li>
             </ul>
         )
     }
