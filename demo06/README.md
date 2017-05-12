@@ -33,7 +33,7 @@ import { BrowserRouter } from 'react-router-dom'
 
 
 ```
-####args
+#### args
  - ```basename``` 定义一个基础目录，如果有二级目录的通过这个统一配置
  ```
    <BrowserRouter basename="/calendar"/>
@@ -41,7 +41,7 @@ import { BrowserRouter } from 'react-router-dom'
  ```
 
 
-###HashRouter 
+### HashRouter 
 >NOTE
 >通过浏览器hash值(window.location.hash)来满足同步UI和URL
 > Hash history 不支持```location.key``` ```location.state``` 推荐大家通过配置服务端使用```BrowserRouter```
@@ -59,7 +59,7 @@ import { BrowserRouter } from 'react-router-dom'
  
 ```
 
-####args
+#### args
 
 - hashType
 >hashType : string
@@ -69,7 +69,7 @@ import { BrowserRouter } from 'react-router-dom'
   - "hashbang" - Creates “ajax crawlable” (deprecated by Google) hashes like #!/ and #!/sunshine/lollipops
 
 
-###Link
+###  Link
 >NOTE 
 >用作导航链接用的类似 A标签
 
@@ -80,7 +80,7 @@ import { Link } from 'react-router-dom'
 <Link to="/about">About</Link>
 ```
 
-#NavLink
+# NavLink
 >NOTE
 >一种特殊的```<Link>``` 可以添加 ```activeClass``` 标记访问过的样式
 
@@ -114,7 +114,7 @@ import { NavLink } from 'react-router-dom'
 
 ```
 
-###Redirect 
+### Redirect 
 >NOTE
 >重定向
 
